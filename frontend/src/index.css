@@ -3,25 +3,201 @@
 body {
   background-image: linear-gradient(to right bottom, #00f260, #0575e6);
   background-attachment: fixed;
+  color: #354538;
 }
-
-.container {
+a {
+  text-decoration: none;
+  color: #354548;
+}
+a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+.app__container {
   padding-top: 50px;
 }
-
-.row {
-  height: 90vh;
+.app__row {
+  height: 86vh;
 }
-
-.app__sidebar {
-  background-color: #ffffff;
-  height: 100%;
-  border-radius: 20px;
-  padding: 25px 15px;
-}
-
 .app__main-content {
   background-color: #ffffff;
   border-radius: 20px;
   padding: 25px 15px;
 }
+
+/* ---------- sidebar ---------- */
+.sidebar {
+  background-color: #ffffff;
+  height: 100%;
+  border-radius: 20px;
+  padding: 25px 15px;
+  text-align: center;
+}
+.sidebar__avatar {
+  height: 110px;
+  width: 120px;
+  object-fit: contain;
+}
+.sidebar__icon {
+  width: 25px;
+  height: 25px;
+}
+.sidebar__name {
+  font-family: "Kaushan Script";
+  margin: 20px 0;
+  font-size: 1.7rem;
+}
+.sidebar__name > span {
+  color: #00f260;
+}
+.sidebar__item {
+  margin-bottom: 6px;
+  padding-top: 6px;
+  height: 40px;
+  font-size: 1.05rem;
+  border-radius: 30px;
+}
+.sidebar__title {
+  background-color: #f1f1f1;
+  border-radius: 30px;
+}
+.sidebar__contact {
+  background-color: #dbdddf;
+  padding: 2px 0;
+  margin-top: 5px;
+  margin: 25px -15px;
+}
+.sidebar__email {
+  background-image: linear-gradient(to right bottom, #00f260, #0575e6);
+  border-radius: 30px;
+  color: #ffffff;
+  margin: 15px 25px 0px;
+  cursor: pointer;
+  transition: all 3s linear;
+}
+.sidebar__email:hover {
+  transform: scale(1.2);
+}
+.sidebar__github:hover,
+.sidebar__resume:hover {
+  background-color: #f1f1f2;
+  color: #000000;
+}
+@media (max-width: 991px) {
+  .app__main-content {
+    margin: 30px 0;
+  }
+}
+
+/* ---------- navbar ---------- */
+.navbar__items {
+  display: flex;
+}
+.navbar__active {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #354358;
+  border-bottom: 4px solid #00f260;
+}
+.navbar__item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #354358;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.navbar__item:hover {
+  background: -webkit-linear-gradient(#00f260, #0575e6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- about ---------- */
+.about {
+  padding: 20px;
+  margin: -35px;
+}
+.about__intro {
+  font-size: 1.1rem;
+  padding: 20px;
+  margin: 10px 0;
+}
+.about__container {
+  background-color: #dbdddf;
+  padding: 30px;
+}
+.about__heading {
+  font-size: 25px;
+  font-weight: 700;
+  color: #354358;
+  margin-left: 10px;
+}
+
+/* ---------- skill card ---------- */
+.skill-card {
+  background-color: #ffffff;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+}
+.skill-card__icon {
+  width: 40px;
+  height: 40px;
+}
+.skill-card-body {
+  margin-left: 15px;
+}
+.skill-card__content {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6e7e91;
+}
+
+/* ---------- resume ---------- */
+.resume {
+  padding-top: 20px;
+}
+.resume-card__heading,
+.resume-languages__heading {
+  margin-left: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #354538;
+}
+.resume-card__body {
+  margin-top: 10px;
+}
+.resume-card__title {
+  font-weight: 700;
+}
+.resume-card__name {
+  font-size: 16px;
+}
+.resume-card__details {
+  font-size: 0.9rem;
+  padding-top: 5px;
+}
+
+/* ---------- bar ---------- */
+.bar {
+  width: 90%;
+  background-color: #f1f2f3;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.bar__icon {
+  width: 15px;
+  height: 15px;
+}
+.bar__wrapper {
+  background-image: linear-gradient(90deg, #00f260, #0575e6);
+  border-radius: 20px;
+  padding: 4px 14px;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* ---------- projects ---------- */
