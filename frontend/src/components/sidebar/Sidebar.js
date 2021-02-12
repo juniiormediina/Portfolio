@@ -41,7 +41,7 @@ const Sidebar = () => {
       <div className="sidebar__name">
         Junior <span>Medina</span>
       </div>
-      <div className="sidebar__item sidebar__title">FrontEnd Developer</div>
+      <div className="sidebar__item sidebar__title">Software Developer</div>
       <a href={resume} download="resume.pdf">
         <div className="sidebar__item sidebar__resume">
           <img src={tie} alt="resume" className="sidebar__icon" />
