@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Merriweather:wght@300&display=swap");
+
+body {
+  background-image: linear-gradient(to right bottom, #00f260, #0575e6);
+  background-attachment: fixed;
+  color: #354538;
+  font-family: sans-serif;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to right bottom, #00f260, #0575e6);
+  border-radius: 50px;
+}
+a {
+  text-decoration: none;
+  color: #354548;
+}
+a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+@import "sass/app";
+@import "sass/sidebar";
+@import "sass/navbar";
+@import "sass/about";
+@import "sass/skill-card";
+@import "sass/resume";
+@import "sass/bar";
+@import "sass/projects";
+@import "sass/media";

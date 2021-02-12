@@ -1,0 +1,22 @@
+.navbar__items {
+  display: flex;
+}
+.navbar__active {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #354358;
+  border-bottom: 4px solid #00f260;
+}
+.navbar__item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #354358;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.navbar__item:hover {
+  background: -webkit-linear-gradient(#00f260, #0575e6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

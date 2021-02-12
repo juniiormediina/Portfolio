@@ -1,0 +1,58 @@
+.sidebar {
+  background-color: #ffffff;
+  height: 100%;
+  border-radius: 20px;
+  padding: 25px 15px;
+  text-align: center;
+}
+.sidebar__avatar {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 2px solid #f1f1f1;
+}
+.sidebar__icon {
+  width: 25px;
+  height: 25px;
+}
+.sidebar__name {
+  font-family: "Kaushan Script";
+  margin: 20px 0;
+  font-size: 1.7rem;
+}
+.sidebar__name > span {
+  color: #00f260;
+}
+.sidebar__item {
+  padding-top: 6px;
+  height: 40px;
+  font-size: 1.05rem;
+  border-radius: 30px;
+  margin-top: 6px;
+}
+.sidebar__title {
+  background-color: #f1f1f1;
+  border-radius: 30px;
+}
+.sidebar__contact {
+  background-color: #dbdddf;
+  padding: 15px 0;
+  margin: 25px -15px;
+}
+.sidebar__email {
+  background-image: linear-gradient(to right bottom, #00f260, #0575e6);
+  border-radius: 30px;
+  color: #ffffff;
+  margin: 15px 25px 0px;
+  cursor: pointer;
+  transition: all 3s linear;
+}
+.sidebar__email:hover {
+  transform: scale(1.2);
+}
+
+.sidebar__resume:hover {
+  background-color: #f1f1f2;
+  color: #000000;
+}

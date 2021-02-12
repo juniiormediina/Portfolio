@@ -1,65 +1,29 @@
 import React from "react";
-/* icons */
-import react from "../assets/icons/react.svg";
-import python from "../assets/icons/python.svg";
+import { motion } from "framer-motion";
 
-/* components */
 import Bar from "./Bar";
-
-const languages = [
-  {
-    icon: python,
-    name: "Python",
-    level: "30",
-  },
-  {
-    icon: react,
-    name: "JavaScript",
-    level: "97",
-  },
-  {
-    icon: react,
-    name: "React",
-    level: "90",
-  },
-  {
-    icon: react,
-    name: "HTML",
-    level: "100",
-  },
-  {
-    icon: python,
-    name: "Django",
-    level: "40",
-  },
-  {
-    icon: react,
-    name: "Bootstrap",
-    level: "98",
-  },
-];
-
-const tools = [
-  {
-    icon: react,
-    name: "Illustrator",
-    level: "85",
-  },
-  {
-    icon: react,
-    name: "Postman",
-    level: "95",
-  },
-  {
-    icon: react,
-    name: "Git",
-    level: "80",
-  },
-];
+import { tools, languages } from "../../assets/Data/resume_data";
 
 const Resume = () => {
+  const resume__variants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        duration: 0.6,
+      },
+    },
+  };
   return (
-    <div className="container resume">
+    <motion.div
+      className="container resume"
+      variants={resume__variants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="row">
         <div className="col-lg-6 resume-card">
           <h4 className="resume-card__heading">Education</h4>
@@ -107,7 +71,7 @@ const Resume = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

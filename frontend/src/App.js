@@ -5,11 +5,13 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Resume from "./components/Resume";
-import Projects from "./components/Projects";
+import { AnimatePresence } from "framer-motion";
+/* components */
+import Sidebar from "./components/sidebar/Sidebar";
+import Navbar from "./components/navbar/Navbar";
+import About from "./components/about/About";
+/* import Resume from "./components/resume/Resume"; */
+import Projects from "./components/projects/Projects";
 
 function App() {
   return (
@@ -22,18 +24,20 @@ function App() {
             </div>
             <div className="col-lg-9 app__main-content">
               <Navbar />
-              <Switch>
-                <Route exact path="/">
-                  <About />
-                </Route>
-                <Route path="/resume">
-                  <Resume />
-                </Route>
-                <Route path="/projects" component={Projects} />
-                <Route>
-                  <Redirect to="/" />
-                </Route>
-              </Switch>
+              <AnimatePresence>
+                <Switch>
+                  <Route exact path="/">
+                    <About />
+                  </Route>
+                  {/* <Route path="/resume">
+                    <Resume />
+                  </Route> */}
+                  <Route path="/projects" component={Projects} />
+                  <Route>
+                    <Redirect to="/" />
+                  </Route>
+                </Switch>
+              </AnimatePresence>
             </div>
           </div>
         </div>
