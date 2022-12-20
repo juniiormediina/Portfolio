@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AboutImg from '../../assets/images/profile.jpg';
 import Resume from '../../assets/Resume Junior Medina.pdf';
 import './about.css';
 
 const About = () => {
+  const [feature] = useState([
+    { id: 'experience', featureTitle: 'Experience', featureSubtitle: '3 Years Working' },
+    { id: 'completed', featureTitle: 'Completed', featureSubtitle: '48 + Projects' },
+    { id: 'support', featureTitle: 'Support', featureSubtitle: 'Online 24/7' },
+  ]);
+
   return (
     <section className='about section' id='about'>
       <h2 className='section__title'>About Me</h2>
@@ -14,23 +20,13 @@ const About = () => {
 
         <div className='about__data'>
           <div className='about__info grid'>
-            <div className='about__box'>
-              <i className='bx bx-award about__icon'></i>
-              <h3 className='about__title'>Experience</h3>
-              <span className='about__subtitle'>3 Years Working</span>
-            </div>
-
-            <div className='about__box'>
-              <i className='bx bx-briefcase-alt about__icon'></i>
-              <h3 className='about__title'>Completed</h3>
-              <span className='about__subtitle'>48 + Projects</span>
-            </div>
-
-            <div className='about__box'>
-              <i className='bx bx-support about__icon'></i>
-              <h3 className='about__title'>Support</h3>
-              <span className='about__subtitle'>Online 24/7</span>
-            </div>
+            {feature.map((features) => (
+              <div className='about__box' key={features.id}>
+                <i className='bx bx-award about__icon'></i>
+                <h3 className='about__title'>{features.featureTitle}</h3>
+                <span className='about__subtitle'>{features.featureSubtitle}</span>
+              </div>
+            ))}
           </div>
 
           <p className='about__description'>
