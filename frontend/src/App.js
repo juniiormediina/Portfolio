@@ -1,10 +1,10 @@
 import './App.css';
 import Footer from './components/footer/footer';
-import Header from './components/header/header.component';
+import Header from './components/header/header';
 import ScrollUp from './components/scrollUp/scrollUp';
-import About from './screens/about/about.component';
-import Home from './screens/home/home.component';
-import Skills from './screens/skills/skills.component';
+import About from './screens/about/about';
+import Home from './screens/home/home';
+import Skills from './screens/skills/skills';
 
 function App() {
   return (

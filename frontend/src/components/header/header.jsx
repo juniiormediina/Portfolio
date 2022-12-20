@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './header.component.css';
+import './header.css';
 
 const Header = () => {
   /*=============== Change Background Header ===============*/
@@ -54,13 +54,8 @@ const Header = () => {
               </a>
             </li>
 
+            {/* section under construction */}
             {/* <li className='nav___item'>
-              <a href='#services' onClick={() => setActiveNav('#services')} className={activeNav === '#home' ? 'nav__link active-link' : 'nav__link'}>
-                <i className='uil uil-briefcase-alt nav__icon'></i> Services
-              </a>
-            </li> */}
-
-            <li className='nav___item'>
               <a
                 href='#portfolio'
                 onClick={() => setActiveNav('#portfolio')}
@@ -77,12 +72,6 @@ const Header = () => {
                 className={activeNav === '#blog' ? 'nav__link active-link' : 'nav__link'}
               >
                 <i className='uil uil-scenery nav__icon'></i> Blog
-              </a>
-            </li>
-
-            {/* <li className='nav___item'>
-              <a href='#contact' onClick={() => setActiveNav('#contact')} className={activeNav === '#contact' ? 'nav__link active-link' : 'nav__link'}>
-                <i className='uil uil-message nav__icon'></i> Contact
               </a>
             </li> */}
           </ul>

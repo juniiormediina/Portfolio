@@ -1,8 +1,8 @@
 import React from 'react';
-import AboutImg from '../../assets/profile1.jpg';
+import AboutImg from '../../assets/images/profile.jpg';
 import Resume from '../../assets/Resume Junior Medina.pdf';
-import Info from '../../components/Info/info.component';
-import './about.component.css';
+import Info from '../../components/Info/info';
+import './about.css';
 
 const About = () => {
   return (

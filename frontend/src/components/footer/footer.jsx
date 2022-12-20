@@ -20,11 +20,12 @@ const Footer = () => {
             </a>
           </li>
 
-          <li>
+          {/* section under construction */}
+          {/* <li>
             <a href='#blog' className='footer__link'>
               Blog
             </a>
-          </li>
+          </li> */}
         </ul>
 
         <div className='footer__social'>
