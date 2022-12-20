@@ -17,11 +17,12 @@ const Home = () => {
               href='https://www.linkedin.com/in/juniorhmedinab/?locale=en_US'
               className='home__social-icon'
               target='_blank'
+              rel='noreferrer'
             >
               <i className='uil uil-linkedin-alt'></i>
             </a>
 
-            <a href='https://github.com/juniiormediina' className='home__social-icon' target='_blank'>
+            <a href='https://github.com/juniiormediina' className='home__social-icon' target='_blank' rel='noreferrer'>
               <i className='uil uil-github-alt'></i>
             </a>
           </div>
@@ -89,7 +90,11 @@ const Home = () => {
               work.
             </p>
 
-            <a href='mailto:juniiormediina@gmail.com?subject=[WEB%20PAGE]%20-%20' className='button button--flex'>
+            <a
+              href='mailto:juniiormediina@gmail.com?subject=[WEB%20PAGE]%20-%20'
+              className='button button--flex'
+              rel='noreferrer'
+            >
               Say Hello!
               <svg
                 className='button__icon'
