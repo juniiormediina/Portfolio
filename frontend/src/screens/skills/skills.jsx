@@ -66,8 +66,7 @@ const Skills = () => {
       <span className='section__subtitle'>My technical level</span>
 
       <div className='skills__container container grid'>
-        {/* Frontend */}
-
+        {/*=============== Frontend ===============*/}
         <div className='skills__content'>
           <h3 className='skills__title'>Frontend developer</h3>
 
@@ -103,8 +102,7 @@ const Skills = () => {
             </div>
           </div>
         </div>
-
-        {/* Backend */}
+        {/*=============== Backend ===============*/}
 
         <div className='skills__content'>
           <h3 className='skills__title'>Backend Developer</h3>
