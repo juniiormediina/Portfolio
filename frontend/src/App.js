@@ -4,6 +4,7 @@ import Header from './components/header/header';
 import ScrollUp from './components/scrollUp/scrollUp';
 import About from './screens/about/about';
 import Home from './screens/home/home';
+import Portfolio from './screens/portfolio/portfolio';
 import Skills from './screens/skills/skills';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Home />
         <About />
         <Skills />
+        <Portfolio />
       </main>
 
       <Footer />

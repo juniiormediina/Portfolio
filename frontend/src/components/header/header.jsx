@@ -54,8 +54,7 @@ const Header = () => {
               </a>
             </li>
 
-            {/* section under construction */}
-            {/* <li className='nav___item'>
+            <li className='nav___item'>
               <a
                 href='#portfolio'
                 onClick={() => setActiveNav('#portfolio')}
@@ -65,6 +64,8 @@ const Header = () => {
               </a>
             </li>
 
+            {/* section under construction */}
+            {/* 
             <li className='nav___item'>
               <a
                 href='#blog'

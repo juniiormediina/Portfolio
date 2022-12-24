@@ -1,64 +1,10 @@
 import React, { useState } from 'react';
+import { Back, Front } from '../../assets/Data/skills_data';
 import './skills.css';
 
 const Skills = () => {
-  const [frontend] = useState([
-    { id: 1, skillName: 'HTML', level: 'Advanced' },
-    {
-      id: 2,
-      skillName: 'CSS',
-      level: 'Advanced',
-    },
-    {
-      id: 3,
-      skillName: 'JavaScript',
-      level: 'Advanced',
-    },
-    {
-      id: 4,
-      skillName: 'Angular',
-      level: 'Intermediate',
-    },
-    {
-      id: 5,
-      skillName: 'React',
-      level: 'Intermediate',
-    },
-    {
-      id: 6,
-      skillName: 'Git',
-      level: 'Advanced',
-    },
-  ]);
-
-  const [backend] = useState([
-    { id: 1, skillName: 'JAVA', level: 'Intermediate' },
-    {
-      id: 2,
-      skillName: 'Spring Boot',
-      level: 'Intermediate',
-    },
-    {
-      id: 3,
-      skillName: 'Node Js',
-      level: 'Intermediate',
-    },
-    {
-      id: 4,
-      skillName: 'Data Base',
-      level: 'Intermediate',
-    },
-    {
-      id: 5,
-      skillName: 'AWS',
-      level: 'Intermediate',
-    },
-    {
-      id: 6,
-      skillName: 'DevOps',
-      level: 'Advanced',
-    },
-  ]);
+  const [frontend] = useState(Front);
+  const [backend] = useState(Back);
 
   return (
     <section className='skills section' id='skills'>

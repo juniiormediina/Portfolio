@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
+import { skills } from '../../assets/Data/about_data';
 import AboutImg from '../../assets/images/profile.jpg';
 import Resume from '../../assets/Resume Junior Medina.pdf';
 import './about.css';
 
 const About = () => {
-  const [feature] = useState([
-    { id: 'experience', featureTitle: 'Experience', featureSubtitle: '3 Years Working' },
-    { id: 'completed', featureTitle: 'Completed', featureSubtitle: '48 + Projects' },
-    { id: 'support', featureTitle: 'Support', featureSubtitle: 'Online 24/7' },
-  ]);
+  const [feature] = useState(skills);
 
   return (
     <section className='about section' id='about'>
