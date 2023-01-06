@@ -4,45 +4,49 @@ import Gifos from '../images/Gifos.svg';
 import Podcast from '../images/Podcast.svg';
 import Warehouse from '../images/Warehouse.svg';
 
-const data_projects = [
+const ProjectsData = [
   {
-    name: 'Podcast Channel',
+    id: 1,
+    title: 'Podcast Channel',
     image: Podcast,
     deployed_url: 'https://juniiormediina.github.io/PodcastChannel/',
     github_url: 'https://github.com/juniiormediina/PodcastChannel',
-    category: ['react.js'],
+    category: 'react.js',
   },
-
   {
-    name: 'Gifos',
+    id: 2,
+    title: 'Gifos',
     image: Gifos,
     deployed_url: 'https://juniiormediina.github.io/Gifos/',
     github_url: 'https://github.com/juniiormediina/Gifos',
-    category: ['vanilla'],
+    category: 'web',
   },
-
   {
-    name: 'Delilah Restó',
+    id: 3,
+    title: 'Delilah Restó',
     image: Delilah,
     deployed_url: 'https://github.com/juniiormediina/DelilahResto',
     github_url: 'https://github.com/juniiormediina/DelilahResto',
-    category: ['node.js', 'MySQL'],
+    category: 'app',
   },
-
   {
-    name: 'Data Warehouse',
+    id: 4,
+    title: 'Data Warehouse',
     image: Warehouse,
     deployed_url: 'https://github.com/juniiormediina/DataWarehouse',
     github_url: 'https://github.com/juniiormediina/DataWarehouse',
-    category: ['MySQL', 'react', 'node.js'],
+    category: 'web',
   },
   {
-    name: 'Chat React',
+    id: 5,
+    title: 'Chat React',
     image: ChatReact,
     deployed_url: 'https://react-chat-jm.herokuapp.com/',
     github_url: 'https://github.com/juniiormediina/Chat-React',
-    category: ['MySQL', 'react.js', 'node.js'],
+    category: 'web',
   },
 ];
 
-export default data_projects;
+const ProjectsNav = [{ name: 'all' }, { name: 'web' }, { name: 'app' }, { name: 'desing' }];
+
+export { ProjectsData, ProjectsNav };
