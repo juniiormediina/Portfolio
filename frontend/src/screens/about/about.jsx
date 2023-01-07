@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { skills } from '../../assets/Data/about_data';
+import { skills } from '../../assets/Data/About_data';
 import AboutImg from '../../assets/images/profile.jpg';
 import Resume from '../../assets/Resume Junior Medina.pdf';
-import './about.css';
+import './About.css';
 
 const About = () => {
   const [feature] = useState(skills);

@@ -1,6 +1,6 @@
 import React from 'react';
-import ScrollDown from '../../components/scrollDown/scrollDown';
-import './home.css';
+import ScrollDown from '../../components/scrollDown/ScrollDown';
+import './Home.css';
 
 const Home = () => {
   return (

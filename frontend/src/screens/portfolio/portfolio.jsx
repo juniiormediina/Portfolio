@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { ProjectsData, ProjectsNav } from '../../assets/Data/portfolio_data';
-import './portfolio.css';
-import WorksItems from './WorksItems';
+import { ProjectsData, ProjectsNav } from '../../assets/Data/Portfolio_data';
+import './Portfolio.css';
+import PortfolioItems from './PortfolioItems';
 
 const Portfolio = () => {
   const [item, setItem] = useState({ name: 'all' });
@@ -25,19 +25,19 @@ const Portfolio = () => {
   };
 
   return (
-    <section className='work section' id='portfolio'>
+    <section className='portfolio section' id='portfolio'>
       <h2 className='section__title'>Portfolio</h2>
       <span className='section__subtitle'>Most recent works</span>
 
       <div>
-        <div className='work__filters'>
+        <div className='portfolio__filters'>
           {ProjectsNav.map((item, index) => {
             return (
               <span
                 onClick={(e) => {
                   handleClick(e, index);
                 }}
-                className={`${active === index ? 'active-work' : ''} work__item`}
+                className={`${active === index ? 'active-portfolio' : ''} portfolio__item`}
                 key={index}
               >
                 {item.name}
@@ -46,9 +46,9 @@ const Portfolio = () => {
           })}
         </div>
 
-        <div className='work__container container grid'>
+        <div className='portfolio__container container grid'>
           {projects.map((item) => {
-            return <WorksItems item={item} key={item.id} />;
+            return <PortfolioItems item={item} key={item.id} />;
           })}
         </div>
       </div>

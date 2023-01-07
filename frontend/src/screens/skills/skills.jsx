@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Back, Front } from '../../assets/Data/skills_data';
-import './skills.css';
+import { Back, Front } from '../../assets/Data/Skills_data';
+import './Skills.css';
 
 const Skills = () => {
   const [frontend] = useState(Front);
