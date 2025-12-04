@@ -1,28 +1,32 @@
 import { Coffee, Heart, Lightbulb } from 'lucide-react';
 import { motion } from 'motion/react';
 
+/**
+ * About component of the application.
+ * This component provides an overview of the user's professional background, skills, and highlights.
+ * It includes a description section and a list of key highlights with icons.
+ *
+ * @returns {JSX.Element} The rendered About component.
+ */
 export function About() {
-  const highlights = [
-    {
-      icon: Coffee,
-      title: 'Apasionado',
-      description: 'Por crear código limpio y experiencias memorables',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovador',
-      description: 'Siempre explorando nuevas tecnologías y tendencias',
-    },
-    {
-      icon: Heart,
-      title: 'Detallista',
-      description: 'Obsesionado con los pequeños detalles que marcan la diferencia',
-    },
-  ];
+  // Array of highlights to display in the component
+  const highlights = [{
+    icon: Coffee, // Icon representing passion
+    title: 'Apasionado', // Title of the highlight
+    description: 'Por crear código limpio y escalable para mantener experiencias memorables', // Description of the highlight
+  }, {
+    icon: Lightbulb, // Icon representing innovation
+    title: 'Innovador', // Title of the highlight
+    description: 'Siempre explorando nuevas tecnologías y tendencias del mundo del desarrollo frontend.', // Description of the highlight
+  }, {
+    icon: Heart, // Icon representing attention to detail
+    title: 'Atención al Detalle', // Title of the highlight
+    description: 'Obsesionado con los pequeños detalles que marcan la diferencia', // Description of the highlight
+  },];
 
-  return (
-    <section id="about" className="min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
+  return (<section id="about" className="min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
       <div className="max-w-6xl mx-auto w-full">
+        {/* Section header */}
         <motion.div
           initial={{opacity: 0, y: 20}}
           whileInView={{opacity: 1, y: 0}}
@@ -35,7 +39,7 @@ export function About() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Descripción */}
+          {/* Description section */}
           <motion.div
             initial={{opacity: 0, x: -20}}
             whileInView={{opacity: 1, x: 0}}
@@ -61,7 +65,7 @@ export function About() {
             </p>
           </motion.div>
 
-          {/* Highlights */}
+          {/* Highlights section */}
           <motion.div
             initial={{opacity: 0, x: 20}}
             whileInView={{opacity: 1, x: 0}}
@@ -69,8 +73,7 @@ export function About() {
             transition={{duration: 0.6, delay: 0.4}}
             className="space-y-6"
           >
-            {highlights.map((item, index) => (
-              <motion.div
+            {highlights.map((item, index) => (<motion.div
                 key={item.title}
                 initial={{opacity: 0, y: 20}}
                 whileInView={{opacity: 1, y: 0}}
@@ -80,18 +83,16 @@ export function About() {
               >
                 <div className="flex items-start gap-4">
                   <div className="neomorphic-flat p-3 rounded-xl">
-                    <item.icon className="w-6 h-6 text-[#667EEA]"/>
+                    <item.icon className="w-6 h-6 text-[#667EEA]" />
                   </div>
                   <div className="flex-1">
                     <h4 className="text-[#2D3748] mb-2">{item.title}</h4>
                     <p className="text-[#718096]">{item.description}</p>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              </motion.div>))}
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
 }

@@ -2,15 +2,27 @@ import { ArrowDown, Code2, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeroProps {
+  /**
+   * Callback function to navigate to the projects section.
+   */
   onNavigateToProjects: () => void;
 }
 
+/**
+ * Hero component of the application.
+ * This component serves as the introductory section of the portfolio, showcasing the user's name,
+ * profession, a brief description, and navigation buttons to view projects or contact.
+ *
+ * @param {HeroProps} props - The props for the Hero component.
+ * @param {function} props.onNavigateToProjects - Callback function to navigate to the projects section.
+ *
+ * @returns {JSX.Element} The rendered Hero component.
+ */
 export function Hero({onNavigateToProjects}: HeroProps) {
-  return (
-    <section className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-24 md:pt-0">
+  return (<section className="min-h-screen flex items-center justify-center px-4 md:px-8 pt-24 md:pt-0">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Contenido principal */}
+          {/* Main content */}
           <motion.div
             initial={{opacity: 0, y: 20}}
             animate={{opacity: 1, y: 0}}
@@ -22,13 +34,13 @@ export function Hero({onNavigateToProjects}: HeroProps) {
                 animate={{rotate: [0, 10, -10, 0]}}
                 transition={{duration: 2, repeat: Infinity, repeatDelay: 3}}
               >
-                <Sparkles className="w-8 h-8 text-[#667EEA]"/>
+                <Sparkles className="w-8 h-8 text-[#667EEA]" />
               </motion.div>
               <span className="text-[#718096]">Hola, soy</span>
             </div>
 
             <h1 className="gradient-text">
-              Ingeniero de Software Frontend
+              Junior Medina, Ingeniero de Software Frontend
             </h1>
 
             <p className="text-[#718096] text-lg md:text-xl max-w-xl">
@@ -43,7 +55,7 @@ export function Hero({onNavigateToProjects}: HeroProps) {
               >
                 <span className="flex items-center justify-center gap-2 gradient-text">
                   Ver proyectos
-                  <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform"/>
+                  <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
                 </span>
               </button>
 
@@ -56,7 +68,7 @@ export function Hero({onNavigateToProjects}: HeroProps) {
             </div>
           </motion.div>
 
-          {/* Elemento visual decorativo */}
+          {/* Decorative visual element */}
           <motion.div
             initial={{opacity: 0, scale: 0.8}}
             animate={{opacity: 1, scale: 1}}
@@ -64,14 +76,14 @@ export function Hero({onNavigateToProjects}: HeroProps) {
             className="hidden md:flex items-center justify-center"
           >
             <div className="relative">
-              {/* Círculo principal neumórfico */}
+              {/* Main neumorphic circle */}
               <div className="w-80 h-80 neomorphic rounded-full flex items-center justify-center">
                 <div className="w-64 h-64 neomorphic-pressed rounded-full flex items-center justify-center">
-                  <Code2 className="w-32 h-32 text-[#667EEA]" strokeWidth={1.5}/>
+                  <Code2 className="w-32 h-32 text-[#667EEA]" strokeWidth={1.5} />
                 </div>
               </div>
 
-              {/* Elementos flotantes decorativos */}
+              {/* Floating decorative elements */}
               <motion.div
                 animate={{y: [0, -20, 0]}}
                 transition={{duration: 3, repeat: Infinity}}
@@ -99,6 +111,5 @@ export function Hero({onNavigateToProjects}: HeroProps) {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
 }

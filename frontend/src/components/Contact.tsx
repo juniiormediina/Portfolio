@@ -2,28 +2,39 @@ import { Check, Copy, Instagram, Linkedin, Mail, Send } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 
+/**
+ * Contact component of the application.
+ * This component provides a contact section with options to send an email, copy the email address,
+ * and access social media links. It also includes animations for a visually appealing user experience.
+ *
+ * @returns {JSX.Element} The rendered Contact component.
+ */
 export function Contact() {
+  // State to manage the "copied" status for the email address
   const [copiedEmail, setCopiedEmail] = useState(false);
 
-  const email = 'contacto@miportfolio.com';
+  // Email address to be displayed and copied
+  const email = 'juniiormediina@gmail.com';
 
-  const socialLinks = [
-    {
-      name: 'LinkedIn',
-      icon: Linkedin,
-      url: 'https://linkedin.com/in/tu-perfil',
-      color: '#0A66C2',
-      description: 'Conecta conmigo profesionalmente',
-    },
-    {
-      name: 'Instagram',
-      icon: Instagram,
-      url: 'https://instagram.com/tu-perfil',
-      color: '#E4405F',
-      description: 'Sígueme para ver mi trabajo',
-    },
-  ];
+  // Social media links with their respective icons, URLs, colors, and descriptions
+  const socialLinks = [{
+    name: 'LinkedIn',
+    icon: Linkedin,
+    url: 'https://linkedin.com/in/juniiormediina',
+    color: '#0A66C2',
+    description: 'Conecta conmigo profesionalmente',
+  }, {
+    name: 'Instagram',
+    icon: Instagram,
+    url: 'https://instagram.com/juniior.mediina',
+    color: '#E4405F',
+    description: 'Sígueme para ver mi trabajo',
+  },];
 
+  /**
+   * Copies the email address to the clipboard and shows a confirmation message.
+   * Resets the "copied" status after 2 seconds.
+   */
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email);
@@ -34,13 +45,16 @@ export function Contact() {
     }
   };
 
+  /**
+   * Opens the default email client to send an email to the specified address.
+   */
   const handleSendEmail = () => {
     window.location.href = `mailto:${email}`;
   };
 
-  return (
-    <section id="contact" className="min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
+  return (<section id="contact" className="min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
       <div className="max-w-5xl mx-auto w-full">
+        {/* Section header */}
         <motion.div
           initial={{opacity: 0, y: 20}}
           whileInView={{opacity: 1, y: 0}}
@@ -56,7 +70,7 @@ export function Contact() {
           </p>
         </motion.div>
 
-        {/* Email principal */}
+        {/* Email section */}
         <motion.div
           initial={{opacity: 0, y: 20}}
           whileInView={{opacity: 1, y: 0}}
@@ -66,7 +80,7 @@ export function Contact() {
         >
           <div className="neomorphic p-8 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <Mail className="w-8 h-8 text-[#667EEA]"/>
+              <Mail className="w-8 h-8 text-[#667EEA]" />
               <h3 className="text-[#2D3748]">Email</h3>
             </div>
 
@@ -83,7 +97,7 @@ export function Contact() {
                 onClick={handleSendEmail}
                 className="neomorphic px-6 py-3 flex items-center justify-center gap-2 hover:shadow-xl transition-all duration-300 active:neomorphic-pressed group"
               >
-                <Send className="w-5 h-5 text-[#667EEA] group-hover:translate-x-1 transition-transform"/>
+                <Send className="w-5 h-5 text-[#667EEA] group-hover:translate-x-1 transition-transform" />
                 <span className="text-[#2D3748]">Enviar email</span>
               </button>
 
@@ -91,23 +105,19 @@ export function Contact() {
                 onClick={handleCopyEmail}
                 className="neomorphic-flat px-6 py-3 flex items-center justify-center gap-2 hover:shadow-lg transition-all duration-300 active:neomorphic-pressed"
               >
-                {copiedEmail ? (
-                  <>
-                    <Check className="w-5 h-5 text-green-500"/>
+                {copiedEmail ? (<>
+                    <Check className="w-5 h-5 text-green-500" />
                     <span className="text-green-500">¡Copiado!</span>
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-5 h-5 text-[#718096]"/>
+                  </>) : (<>
+                    <Copy className="w-5 h-5 text-[#718096]" />
                     <span className="text-[#718096]">Copiar email</span>
-                  </>
-                )}
+                  </>)}
               </button>
             </div>
           </div>
         </motion.div>
 
-        {/* Redes sociales */}
+        {/* Social media links */}
         <motion.div
           initial={{opacity: 0, y: 20}}
           whileInView={{opacity: 1, y: 0}}
@@ -118,8 +128,7 @@ export function Contact() {
           <h3 className="text-[#2D3748] text-center mb-8">O encuéntrame en</h3>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {socialLinks.map((social, index) => (
-              <motion.a
+            {socialLinks.map((social, index) => (<motion.a
                 key={social.name}
                 href={social.url}
                 target="_blank"
@@ -133,7 +142,7 @@ export function Contact() {
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div
                     className="neomorphic-flat p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300">
-                    <social.icon className="w-10 h-10" style={{color: social.color}}/>
+                    <social.icon className="w-10 h-10" style={{color: social.color}} />
                   </div>
                   <div>
                     <h4 className="text-[#2D3748] mb-2">{social.name}</h4>
@@ -143,12 +152,11 @@ export function Contact() {
                     <span className="text-sm gradient-text">Visitar perfil →</span>
                   </div>
                 </div>
-              </motion.a>
-            ))}
+              </motion.a>))}
           </div>
         </motion.div>
 
-        {/* Call to action final */}
+        {/* Final call to action */}
         <motion.div
           initial={{opacity: 0}}
           whileInView={{opacity: 1}}
@@ -162,6 +170,5 @@ export function Contact() {
           </p>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
 }
