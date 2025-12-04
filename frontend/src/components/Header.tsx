@@ -6,15 +6,15 @@ interface HeaderProps {
   onNavigate: (section: string) => void;
 }
 
-export function Header({ activeSection, onNavigate }: HeaderProps) {
+export function Header({activeSection, onNavigate}: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Inicio' },
-    { id: 'about', label: 'Sobre mí' },
-    { id: 'projects', label: 'Proyectos' },
-    { id: 'skills', label: 'Habilidades' },
-    { id: 'contact', label: 'Contacto' },
+    {id: 'home', label: 'Inicio'},
+    {id: 'about', label: 'Sobre mí'},
+    {id: 'projects', label: 'Proyectos'},
+    {id: 'skills', label: 'Habilidades'},
+    {id: 'contact', label: 'Contacto'},
   ];
 
   const handleNavigate = (sectionId: string) => {
@@ -48,7 +48,8 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
                 >
                   {item.label}
                   {activeSection === item.id && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#667EEA] to-[#764BA2] rounded-full" />
+                    <div
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#667EEA] to-[#764BA2] rounded-full"/>
                   )}
                 </button>
               </li>
@@ -62,9 +63,9 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-[#2D3748]" />
+              <X className="w-6 h-6 text-[#2D3748]"/>
             ) : (
-              <Menu className="w-6 h-6 text-[#2D3748]" />
+              <Menu className="w-6 h-6 text-[#2D3748]"/>
             )}
           </button>
         </div>

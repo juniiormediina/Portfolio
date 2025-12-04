@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, Mail, Send, Copy, Check } from 'lucide-react';
+import { Check, Copy, Instagram, Linkedin, Mail, Send } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 
@@ -42,34 +42,34 @@ export function Contact() {
     <section id="contact" className="min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
       <div className="max-w-5xl mx-auto w-full">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.6}}
           className="text-center mb-16"
         >
           <h2 className="gradient-text mb-4">Conectemos</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#667EEA] to-[#764BA2] mx-auto rounded-full"></div>
           <p className="text-[#718096] mt-6 max-w-2xl mx-auto text-lg">
-            ¿Tienes un proyecto en mente o simplemente quieres conversar? 
+            ¿Tienes un proyecto en mente o simplemente quieres conversar?
             Estoy siempre abierto a nuevas oportunidades y colaboraciones
           </p>
         </motion.div>
 
         {/* Email principal */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.6, delay: 0.2}}
           className="mb-12"
         >
           <div className="neomorphic p-8 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <Mail className="w-8 h-8 text-[#667EEA]" />
+              <Mail className="w-8 h-8 text-[#667EEA]"/>
               <h3 className="text-[#2D3748]">Email</h3>
             </div>
-            
+
             <p className="text-[#718096] text-center mb-6">
               La forma más directa de contactarme
             </p>
@@ -83,7 +83,7 @@ export function Contact() {
                 onClick={handleSendEmail}
                 className="neomorphic px-6 py-3 flex items-center justify-center gap-2 hover:shadow-xl transition-all duration-300 active:neomorphic-pressed group"
               >
-                <Send className="w-5 h-5 text-[#667EEA] group-hover:translate-x-1 transition-transform" />
+                <Send className="w-5 h-5 text-[#667EEA] group-hover:translate-x-1 transition-transform"/>
                 <span className="text-[#2D3748]">Enviar email</span>
               </button>
 
@@ -93,12 +93,12 @@ export function Contact() {
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-5 h-5 text-green-500" />
+                    <Check className="w-5 h-5 text-green-500"/>
                     <span className="text-green-500">¡Copiado!</span>
                   </>
                 ) : (
                   <>
-                    <Copy className="w-5 h-5 text-[#718096]" />
+                    <Copy className="w-5 h-5 text-[#718096]"/>
                     <span className="text-[#718096]">Copiar email</span>
                   </>
                 )}
@@ -109,14 +109,14 @@ export function Contact() {
 
         {/* Redes sociales */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.6, delay: 0.4}}
           className="mb-12"
         >
           <h3 className="text-[#2D3748] text-center mb-8">O encuéntrame en</h3>
-          
+
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {socialLinks.map((social, index) => (
               <motion.a
@@ -124,15 +124,16 @@ export function Contact() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                initial={{opacity: 0, scale: 0.9}}
+                whileInView={{opacity: 1, scale: 1}}
+                viewport={{once: true}}
+                transition={{duration: 0.4, delay: 0.5 + index * 0.1}}
                 className="neomorphic p-8 hover:shadow-2xl transition-all duration-300 group"
               >
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="neomorphic-flat p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300">
-                    <social.icon className="w-10 h-10" style={{ color: social.color }} />
+                  <div
+                    className="neomorphic-flat p-4 rounded-2xl group-hover:scale-110 transition-transform duration-300">
+                    <social.icon className="w-10 h-10" style={{color: social.color}}/>
                   </div>
                   <div>
                     <h4 className="text-[#2D3748] mb-2">{social.name}</h4>
@@ -149,14 +150,15 @@ export function Contact() {
 
         {/* Call to action final */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: true}}
+          transition={{duration: 0.6, delay: 0.6}}
           className="text-center neomorphic-flat p-8 max-w-2xl mx-auto"
         >
           <p className="text-[#718096] text-lg">
-            💼 Actualmente <span className="text-[#667EEA]">disponible</span> para proyectos freelance y oportunidades full-time
+            💼 Actualmente <span className="text-[#667EEA]">disponible</span> para proyectos freelance y oportunidades
+            full-time
           </p>
         </motion.div>
       </div>

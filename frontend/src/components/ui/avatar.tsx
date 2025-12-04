@@ -6,9 +6,9 @@ import * as AvatarPrimitive from "@radix-ui/react-avatar@1.1.3";
 import { cn } from "./utils";
 
 function Avatar({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Root>) {
+                  className,
+                  ...props
+                }: React.ComponentProps<typeof AvatarPrimitive.Root>) {
   return (
     <AvatarPrimitive.Root
       data-slot="avatar"
@@ -22,9 +22,9 @@ function Avatar({
 }
 
 function AvatarImage({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Image>) {
+                       className,
+                       ...props
+                     }: React.ComponentProps<typeof AvatarPrimitive.Image>) {
   return (
     <AvatarPrimitive.Image
       data-slot="avatar-image"
@@ -35,9 +35,9 @@ function AvatarImage({
 }
 
 function AvatarFallback({
-  className,
-  ...props
-}: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
+                          className,
+                          ...props
+                        }: React.ComponentProps<typeof AvatarPrimitive.Fallback>) {
   return (
     <AvatarPrimitive.Fallback
       data-slot="avatar-fallback"

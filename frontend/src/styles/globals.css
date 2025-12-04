@@ -5,102 +5,102 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Colores principales */
-    --color-base: #E6E9EF;
-    --color-surface: #F7FAFC;
-    --color-text-primary: #2D3748;
-    --color-text-secondary: #718096;
-    --color-accent-primary: #667EEA;
-    --color-accent-secondary: #764BA2;
-    
-    /* Sombras neumórficas */
-    --shadow-dark: rgba(174, 174, 192, 0.4);
-    --shadow-light: rgba(255, 255, 255, 0.8);
-  }
+    :root {
+        /* Colores principales */
+        --color-base: #E6E9EF;
+        --color-surface: #F7FAFC;
+        --color-text-primary: #2D3748;
+        --color-text-secondary: #718096;
+        --color-accent-primary: #667EEA;
+        --color-accent-secondary: #764BA2;
 
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: var(--color-base);
-    color: var(--color-text-primary);
-  }
+        /* Sombras neumórficas */
+        --shadow-dark: rgba(174, 174, 192, 0.4);
+        --shadow-light: rgba(255, 255, 255, 0.8);
+    }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-  }
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background-color: var(--color-base);
+        color: var(--color-text-primary);
+    }
 
-  h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-  }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+    }
 
-  h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  h3 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    line-height: 1.4;
-  }
-
-  h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.5;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.7;
-    font-weight: 400;
-  }
-
-  @media (max-width: 768px) {
     h1 {
-      font-size: 2.5rem;
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
     }
 
     h2 {
-      font-size: 2rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        line-height: 1.3;
     }
 
     h3 {
-      font-size: 1.5rem;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 1.4;
     }
-  }
+
+    h4 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.7;
+        font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
 }
 
 /* Efectos neumórficos personalizados */
 @layer components {
-  .neomorphic {
-    background: var(--color-base);
-    box-shadow: 8px 8px 16px var(--shadow-dark),
-                -8px -8px 16px var(--shadow-light);
-    border-radius: 16px;
-  }
+    .neomorphic {
+        background: var(--color-base);
+        box-shadow: 8px 8px 16px var(--shadow-dark),
+        -8px -8px 16px var(--shadow-light);
+        border-radius: 16px;
+    }
 
-  .neomorphic-pressed {
-    background: var(--color-base);
-    box-shadow: inset 4px 4px 8px var(--shadow-dark),
-                inset -4px -4px 8px var(--shadow-light);
-    border-radius: 16px;
-  }
+    .neomorphic-pressed {
+        background: var(--color-base);
+        box-shadow: inset 4px 4px 8px var(--shadow-dark),
+        inset -4px -4px 8px var(--shadow-light);
+        border-radius: 16px;
+    }
 
-  .neomorphic-flat {
-    background: var(--color-base);
-    box-shadow: 4px 4px 8px var(--shadow-dark),
-                -4px -4px 8px var(--shadow-light);
-    border-radius: 12px;
-  }
+    .neomorphic-flat {
+        background: var(--color-base);
+        box-shadow: 4px 4px 8px var(--shadow-dark),
+        -4px -4px 8px var(--shadow-light);
+        border-radius: 12px;
+    }
 
-  .gradient-text {
-    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+    .gradient-text {
+        background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 }

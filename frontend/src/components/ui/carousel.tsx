@@ -1,9 +1,7 @@
 "use client";
 
 import * as React from "react";
-import useEmblaCarousel, {
-  type UseEmblaCarouselType,
-} from "embla-carousel-react@8.6.0";
+import useEmblaCarousel, { type UseEmblaCarouselType, } from "embla-carousel-react@8.6.0";
 import { ArrowLeft, ArrowRight } from "lucide-react@0.487.0";
 
 import { cn } from "./utils";
@@ -17,7 +15,7 @@ type CarouselPlugin = UseCarouselParameters[1];
 type CarouselProps = {
   opts?: CarouselOptions;
   plugins?: CarouselPlugin;
-  orientation?: "horizontal" | "vertical";
+  orientation?: "horizontal"|"vertical";
   setApi?: (api: CarouselApi) => void;
 };
 
@@ -28,9 +26,9 @@ type CarouselContextProps = {
   scrollNext: () => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
-} & CarouselProps;
+}&CarouselProps;
 
-const CarouselContext = React.createContext<CarouselContextProps | null>(null);
+const CarouselContext = React.createContext<CarouselContextProps|null>(null);
 
 function useCarousel() {
   const context = React.useContext(CarouselContext);
@@ -43,14 +41,14 @@ function useCarousel() {
 }
 
 function Carousel({
-  orientation = "horizontal",
-  opts,
-  setApi,
-  plugins,
-  className,
-  children,
-  ...props
-}: React.ComponentProps<"div"> & CarouselProps) {
+                    orientation = "horizontal",
+                    opts,
+                    setApi,
+                    plugins,
+                    className,
+                    children,
+                    ...props
+                  }: React.ComponentProps<"div">&CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
     {
       ...opts,
@@ -132,8 +130,8 @@ function Carousel({
   );
 }
 
-function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
-  const { carouselRef, orientation } = useCarousel();
+function CarouselContent({className, ...props}: React.ComponentProps<"div">) {
+  const {carouselRef, orientation} = useCarousel();
 
   return (
     <div
@@ -153,8 +151,8 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   );
 }
 
-function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
-  const { orientation } = useCarousel();
+function CarouselItem({className, ...props}: React.ComponentProps<"div">) {
+  const {orientation} = useCarousel();
 
   return (
     <div
@@ -172,12 +170,12 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 function CarouselPrevious({
-  className,
-  variant = "outline",
-  size = "icon",
-  ...props
-}: React.ComponentProps<typeof Button>) {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+                            className,
+                            variant = "outline",
+                            size = "icon",
+                            ...props
+                          }: React.ComponentProps<typeof Button>) {
+  const {orientation, scrollPrev, canScrollPrev} = useCarousel();
 
   return (
     <Button
@@ -195,19 +193,19 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft />
+      <ArrowLeft/>
       <span className="sr-only">Previous slide</span>
     </Button>
   );
 }
 
 function CarouselNext({
-  className,
-  variant = "outline",
-  size = "icon",
-  ...props
-}: React.ComponentProps<typeof Button>) {
-  const { orientation, scrollNext, canScrollNext } = useCarousel();
+                        className,
+                        variant = "outline",
+                        size = "icon",
+                        ...props
+                      }: React.ComponentProps<typeof Button>) {
+  const {orientation, scrollNext, canScrollNext} = useCarousel();
 
   return (
     <Button
@@ -225,7 +223,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight />
+      <ArrowRight/>
       <span className="sr-only">Next slide</span>
     </Button>
   );

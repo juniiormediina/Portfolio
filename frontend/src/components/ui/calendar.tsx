@@ -8,11 +8,11 @@ import { cn } from "./utils";
 import { buttonVariants } from "./button";
 
 function Calendar({
-  className,
-  classNames,
-  showOutsideDays = true,
-  ...props
-}: React.ComponentProps<typeof DayPicker>) {
+                    className,
+                    classNames,
+                    showOutsideDays = true,
+                    ...props
+                  }: React.ComponentProps<typeof DayPicker>) {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -24,7 +24,7 @@ function Calendar({
         caption_label: "text-sm font-medium",
         nav: "flex items-center gap-1",
         nav_button: cn(
-          buttonVariants({ variant: "outline" }),
+          buttonVariants({variant: "outline"}),
           "size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
         ),
         nav_button_previous: "absolute left-1",
@@ -41,7 +41,7 @@ function Calendar({
             : "[&:has([aria-selected])]:rounded-md",
         ),
         day: cn(
-          buttonVariants({ variant: "ghost" }),
+          buttonVariants({variant: "ghost"}),
           "size-8 p-0 font-normal aria-selected:opacity-100",
         ),
         day_range_start:
@@ -60,10 +60,10 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ className, ...props }) => (
+        IconLeft: ({className, ...props}) => (
           <ChevronLeft className={cn("size-4", className)} {...props} />
         ),
-        IconRight: ({ className, ...props }) => (
+        IconRight: ({className, ...props}) => (
           <ChevronRight className={cn("size-4", className)} {...props} />
         ),
       }}

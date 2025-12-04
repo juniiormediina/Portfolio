@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -14,9 +14,9 @@ export default function App() {
   const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({behavior: "smooth"});
     } else if (sectionId === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({top: 0, behavior: "smooth"});
     }
   };
 
@@ -42,7 +42,7 @@ export default function App() {
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
+          const {offsetTop, offsetHeight} = element;
           if (
             scrollPosition >= offsetTop &&
             scrollPosition < offsetTop + offsetHeight
@@ -75,13 +75,13 @@ export default function App() {
           />
         </div>
 
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
+        <About/>
+        <Projects/>
+        <Skills/>
+        <Contact/>
       </main>
 
-      <Footer />
+      <Footer/>
     </div>
   );
 }

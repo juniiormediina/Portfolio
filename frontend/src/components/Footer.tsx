@@ -16,26 +16,26 @@ export function Footer() {
             {/* Mensaje */}
             <div className="flex items-center gap-2 text-[#718096]">
               <span>Hecho con</span>
-              <Heart className="w-4 h-4 text-[#667EEA] fill-[#667EEA] animate-pulse" />
+              <Heart className="w-4 h-4 text-[#667EEA] fill-[#667EEA] animate-pulse"/>
               <span>y mucho café</span>
             </div>
 
             {/* Enlaces rápidos */}
             <div className="flex items-center gap-6">
-              <a 
-                href="#home" 
+              <a
+                href="#home"
                 className="text-[#718096] hover:text-[#667EEA] transition-colors text-sm"
               >
                 Inicio
               </a>
-              <a 
-                href="#projects" 
+              <a
+                href="#projects"
                 className="text-[#718096] hover:text-[#667EEA] transition-colors text-sm"
               >
                 Proyectos
               </a>
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 className="text-[#718096] hover:text-[#667EEA] transition-colors text-sm"
               >
                 Contacto

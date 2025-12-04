@@ -65,7 +65,7 @@ export function Projects() {
       technologies: ['React', 'TypeScript'],
       imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80',
     };
-    
+
     setTimeout(() => {
       setProjects([...projects, newProject]);
       setShowAddForm(false);
@@ -76,10 +76,10 @@ export function Projects() {
     <section id="projects" className="min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
       <div className="max-w-7xl mx-auto w-full">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.6}}
           className="text-center mb-16"
         >
           <h2 className="gradient-text mb-4">Proyectos Destacados</h2>
@@ -94,10 +94,10 @@ export function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              initial={{opacity: 0, y: 20}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{duration: 0.5, delay: index * 0.1}}
               className="neomorphic overflow-hidden hover:shadow-2xl transition-all duration-300 group"
             >
               {/* Imagen del proyecto */}
@@ -134,7 +134,7 @@ export function Projects() {
                       href={project.liveUrl}
                       className="neomorphic-flat px-4 py-2 flex items-center gap-2 text-[#2D3748] hover:text-[#667EEA] transition-colors active:neomorphic-pressed"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4"/>
                       <span className="text-sm">Demo</span>
                     </a>
                   )}
@@ -143,7 +143,7 @@ export function Projects() {
                       href={project.githubUrl}
                       className="neomorphic-flat px-4 py-2 flex items-center gap-2 text-[#2D3748] hover:text-[#667EEA] transition-colors active:neomorphic-pressed"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="w-4 h-4"/>
                       <span className="text-sm">Código</span>
                     </a>
                   )}
@@ -155,10 +155,10 @@ export function Projects() {
 
         {/* Botón para agregar más proyectos */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          viewport={{once: true}}
+          transition={{duration: 0.6, delay: 0.4}}
           className="flex justify-center"
         >
           <button
@@ -166,7 +166,7 @@ export function Projects() {
             disabled={showAddForm}
             className="neomorphic px-8 py-4 flex items-center gap-3 hover:shadow-xl transition-all duration-300 active:neomorphic-pressed disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Plus className={`w-5 h-5 text-[#667EEA] ${showAddForm ? 'animate-spin' : ''}`} />
+            <Plus className={`w-5 h-5 text-[#667EEA] ${showAddForm ? 'animate-spin' : ''}`}/>
             <span className="gradient-text">
               {showAddForm ? 'Agregando...' : 'Agregar nuevo proyecto'}
             </span>

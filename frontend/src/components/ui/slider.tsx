@@ -6,13 +6,13 @@ import * as SliderPrimitive from "@radix-ui/react-slider@1.2.3";
 import { cn } from "./utils";
 
 function Slider({
-  className,
-  defaultValue,
-  value,
-  min = 0,
-  max = 100,
-  ...props
-}: React.ComponentProps<typeof SliderPrimitive.Root>) {
+                  className,
+                  defaultValue,
+                  value,
+                  min = 0,
+                  max = 100,
+                  ...props
+                }: React.ComponentProps<typeof SliderPrimitive.Root>) {
   const _values = React.useMemo(
     () =>
       Array.isArray(value)
@@ -49,7 +49,7 @@ function Slider({
           )}
         />
       </SliderPrimitive.Track>
-      {Array.from({ length: _values.length }, (_, index) => (
+      {Array.from({length: _values.length}, (_, index) => (
         <SliderPrimitive.Thumb
           data-slot="slider-thumb"
           key={index}
