@@ -1,19 +1,20 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeaderProps {
-  activeSection: string;
-  onNavigate: (section: string) => void;
+  activeSection: string; // The currently active section of the page
+  onNavigate: (section: string) => void; // Function to handle navigation to a specific section
 }
 
 /**
- * Header component of the application.
- * This component provides a responsive navigation bar with links to different sections of the page.
- * It supports both desktop and mobile views, with a collapsible menu for smaller screens.
+ * Header a component of the application.
+ * This component renders a responsive navigation bar with links to different sections,
+ * a language toggle button, and a mobile menu.
  *
  * @param {HeaderProps} props - The props for the Header component.
- * @param {string} props.activeSection - The ID of the currently active section.
- * @param {function} props.onNavigate - Callback function to handle navigation to a specific section.
+ * @param {string} props.activeSection - The currently active section of the page.
+ * @param {function} props.onNavigate - Function to handle navigation to a specific section.
  *
  * @returns {JSX.Element} The rendered Header component.
  */
@@ -21,13 +22,20 @@ export function Header({activeSection, onNavigate}: HeaderProps) {
   // State to manage the visibility of the mobile menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Navigation items for the header
-  const navItems = [{id: 'home', label: 'Inicio'}, {id: 'about', label: 'Sobre mí'}, {
-    id: 'projects', label: 'Proyectos'
-  }, {id: 'skills', label: 'Habilidades'}, {id: 'contact', label: 'Contacto'},];
+  // Retrieve language-related functions and translations from the LanguageContext
+  const {language, toggleLanguage, t} = useLanguage();
+
+  // Navigation items to be displayed in the header
+  const navItems = [{id: 'home', label: t('nav.home')}, // Home section
+    {id: 'about', label: t('nav.about')}, // About section
+    {id: 'projects', label: t('nav.projects')}, // Projects section
+    {id: 'skills', label: t('nav.skills')}, // Skills section
+    {id: 'contact', label: t('nav.contact')}, // Contact section
+  ];
 
   /**
-   * Handles navigation to a specific section and closes the mobile menu.
+   * Handles navigation to a specific section.
+   * Closes the mobile menu after navigation.
    *
    * @param {string} sectionId - The ID of the section to navigate to.
    */
@@ -48,18 +56,30 @@ export function Header({activeSection, onNavigate}: HeaderProps) {
         </button>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (<li key={item.id}>
-            <button
-              onClick={() => handleNavigate(item.id)}
-              className={`relative px-4 py-2 rounded-lg transition-all ${activeSection === item.id ? 'text-[#667EEA]' : 'text-[#718096] hover:text-[#2D3748]'}`}
-            >
-              {item.label}
-              {activeSection === item.id && (<div
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#667EEA] to-[#764BA2] rounded-full" />)}
-            </button>
-          </li>))}
-        </ul>
+        <div className="hidden md:flex items-center gap-4">
+          <ul className="flex items-center gap-8">
+            {navItems.map((item) => (<li key={item.id}>
+              <button
+                onClick={() => handleNavigate(item.id)}
+                className={`relative px-4 py-2 rounded-lg transition-all ${activeSection === item.id ? 'text-[#667EEA]' : 'text-[#718096] hover:text-[#2D3748]'}`}
+              >
+                {item.label}
+                {activeSection === item.id && (<div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#667EEA] to-[#764BA2] rounded-full" />)}
+              </button>
+            </li>))}
+          </ul>
+
+          {/* Language Toggle Button */}
+          <button
+            onClick={toggleLanguage}
+            className="neomorphic-flat px-4 py-2 rounded-lg hover:shadow-xl transition-all flex items-center gap-2 text-[#718096] hover:text-[#667EEA]"
+            aria-label="Toggle language"
+          >
+            <Globe className="w-5 h-5" />
+            <span className="uppercase">{language}</span>
+          </button>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -72,16 +92,28 @@ export function Header({activeSection, onNavigate}: HeaderProps) {
       </div>
 
       {/* Mobile Navigation */}
-      {isMenuOpen && (<ul className="md:hidden mt-6 space-y-2">
-        {navItems.map((item) => (<li key={item.id}>
-          <button
-            onClick={() => handleNavigate(item.id)}
-            className={`w-full text-left px-4 py-3 rounded-lg transition-all ${activeSection === item.id ? 'text-[#667EEA] neomorphic-pressed' : 'text-[#718096] hover:text-[#2D3748]'}`}
-          >
-            {item.label}
-          </button>
-        </li>))}
-      </ul>)}
+      {isMenuOpen && (<div className="md:hidden mt-6 space-y-4">
+        <ul className="space-y-2">
+          {navItems.map((item) => (<li key={item.id}>
+            <button
+              onClick={() => handleNavigate(item.id)}
+              className={`w-full text-left px-4 py-3 rounded-lg transition-all ${activeSection === item.id ? 'text-[#667EEA] neomorphic-pressed' : 'text-[#718096] hover:text-[#2D3748]'}`}
+            >
+              {item.label}
+            </button>
+          </li>))}
+        </ul>
+
+        {/* Mobile Language Toggle */}
+        <button
+          onClick={toggleLanguage}
+          className="w-full neomorphic-flat px-4 py-3 rounded-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 text-[#718096] hover:text-[#667EEA]"
+          aria-label="Toggle language"
+        >
+          <Globe className="w-5 h-5" />
+          <span className="uppercase">{language === 'es' ? 'Español' : 'English'}</span>
+        </button>
+      </div>)}
     </nav>
   </header>);
 }

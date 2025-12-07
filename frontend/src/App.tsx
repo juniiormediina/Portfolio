@@ -6,11 +6,13 @@ import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 /**
- * The main App component that serves as the root of the application.
- * It manages the active section state and handles smooth scrolling
- * and active section detection during user interaction.
+ * The main App part that serves as the root of the application.
+ * It manages the active section state, handles smooth scrolling, and detects the active section during user interaction.
+ *
+ * @returns {JSX.Element} The rendered App component.
  */
 export default function App() {
   // State to track the currently active section
@@ -36,7 +38,7 @@ export default function App() {
    * Updates the `activeSection` state based on the user's scroll position.
    */
   useEffect(() => {
-    const sections = ["home", "about", "projects", "skills", "contact",];
+    const sections = ["home", "about", "projects", "skills", "contact"];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -60,35 +62,32 @@ export default function App() {
       }
     };
 
-    // Add scroll event listener
+    // Add a scroll event listener
     window.addEventListener("scroll", handleScroll);
     // Cleanup event listener on component unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (<div className="min-h-screen">
+  return (<LanguageProvider children={undefined}>
+    <div className="min-h-screen">
       {/* Header component with navigation and active section highlighting */}
-      <Header
-        activeSection={activeSection}
-        onNavigate={handleNavigate}
-      />
+      <Header activeSection={activeSection} onNavigate={handleNavigate} />
 
       <main>
         {/* Hero section with a callback to navigate to the Projects section */}
         <div id="home">
-          <Hero
-            onNavigateToProjects={() => handleNavigate("projects")}
-          />
+          <Hero onNavigateToProjects={() => handleNavigate("projects")} />
         </div>
 
         {/* Other sections of the page */}
-        <About/>
-        <Projects/>
-        <Skills/>
-        <Contact/>
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
       </main>
 
       {/* Footer component */}
-      <Footer/>
-    </div>);
+      <Footer />
+    </div>
+  </LanguageProvider>);
 }

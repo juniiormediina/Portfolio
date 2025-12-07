@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import * as RechartsPrimitive from "recharts@2.15.2";
+import * as RechartsPrimitive from "recharts";
 
 import { cn } from "./utils";
 
@@ -60,7 +60,7 @@ function ChartContainer({
         )}
         {...props}
       >
-        <ChartStyle id={chartId} config={config}/>
+        <ChartStyle id={chartId} config={config} />
         <RechartsPrimitive.ResponsiveContainer>
           {children}
         </RechartsPrimitive.ResponsiveContainer>
@@ -197,7 +197,7 @@ function ChartTooltipContent({
               ) : (
                 <>
                   {itemConfig?.icon ? (
-                    <itemConfig.icon/>
+                    <itemConfig.icon />
                   ) : (
                     !hideIndicator && (
                       <div
@@ -287,7 +287,7 @@ function ChartLegendContent({
             )}
           >
             {itemConfig?.icon && !hideIcon ? (
-              <itemConfig.icon/>
+              <itemConfig.icon />
             ) : (
               <div
                 className="h-2 w-2 shrink-0 rounded-[2px]"

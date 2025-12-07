@@ -1,98 +1,95 @@
 import { Coffee, Heart, Lightbulb } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 /**
- * About component of the application.
- * This component provides an overview of the user's professional background, skills, and highlights.
- * It includes a description section and a list of key highlights with icons.
+ * About a component of the application.
+ * This component displays an "About" section with an introduction and highlights
+ * about the developer's passion, approach, and journey.
  *
  * @returns {JSX.Element} The rendered About component.
  */
 export function About() {
-  // Array of highlights to display in the component
+  // Retrieve the translation function from the LanguageContext
+  const {t} = useLanguage();
+
+  // Array of highlights to be displayed in the About section
   const highlights = [{
     icon: Coffee, // Icon representing passion
-    title: 'Apasionado', // Title of the highlight
-    description: 'Por crear código limpio y escalable para mantener experiencias memorables', // Description of the highlight
+    title: t('about.passion_1'), // Title for the passion highlight
+    description: t('about.passion.desc_1'), // Description for the passion highlight
   }, {
-    icon: Lightbulb, // Icon representing innovation
-    title: 'Innovador', // Title of the highlight
-    description: 'Siempre explorando nuevas tecnologías y tendencias del mundo del desarrollo frontend.', // Description of the highlight
+    icon: Lightbulb, // Icon representing approach
+    title: t('about.approach_1'), // Title for the approach highlight
+    description: t('about.approach.desc_1'), // Description for the approach highlight
   }, {
-    icon: Heart, // Icon representing attention to detail
-    title: 'Atención al Detalle', // Title of the highlight
-    description: 'Obsesionado con los pequeños detalles que marcan la diferencia', // Description of the highlight
+    icon: Heart, // Icon representing journey
+    title: t('about.journey_1'), // Title for the journey highlight
+    description: t('about.journey.desc_1'), // Description for the journey highlight
   },];
 
   return (<section id="about" className="min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
-      <div className="max-w-6xl mx-auto w-full">
-        {/* Section header */}
+    <div className="max-w-6xl mx-auto w-full">
+      {/* Section header */}
+      <motion.div
+        initial={{opacity: 0, y: 20}}
+        whileInView={{opacity: 1, y: 0}}
+        viewport={{once: true}}
+        transition={{duration: 0.6}}
+        className="text-center mb-16"
+      >
+        <h2 className="gradient-text mb-4">{t('about.title')}</h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-[#667EEA] to-[#764BA2] mx-auto rounded-full"></div>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        {/* Description section */}
         <motion.div
-          initial={{opacity: 0, y: 20}}
-          whileInView={{opacity: 1, y: 0}}
+          initial={{opacity: 0, x: -20}}
+          whileInView={{opacity: 1, x: 0}}
           viewport={{once: true}}
-          transition={{duration: 0.6}}
-          className="text-center mb-16"
+          transition={{duration: 0.6, delay: 0.2}}
+          className="space-y-6"
         >
-          <h2 className="gradient-text mb-4">Sobre mí</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#667EEA] to-[#764BA2] mx-auto rounded-full"></div>
+          <p className="text-[#718096] text-lg leading-relaxed">
+            {t('about.intro_1')}
+          </p>
+          <p className="text-[#718096] text-lg leading-relaxed">
+            {t('about.intro_2')}
+          </p>
+          <p className="text-[#718096] text-lg leading-relaxed">
+            {t('about.intro_3')}
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Description section */}
-          <motion.div
-            initial={{opacity: 0, x: -20}}
-            whileInView={{opacity: 1, x: 0}}
+        {/* Highlights section */}
+        <motion.div
+          initial={{opacity: 0, x: 20}}
+          whileInView={{opacity: 1, x: 0}}
+          viewport={{once: true}}
+          transition={{duration: 0.6, delay: 0.4}}
+          className="space-y-6"
+        >
+          {highlights.map((item, index) => (<motion.div
+            key={item.title}
+            initial={{opacity: 0, y: 20}}
+            whileInView={{opacity: 1, y: 0}}
             viewport={{once: true}}
-            transition={{duration: 0.6, delay: 0.2}}
-            className="space-y-6"
+            transition={{duration: 0.5, delay: 0.5 + index * 0.1}}
+            className="neomorphic p-6 hover:shadow-xl transition-shadow duration-300"
           >
-            <p className="text-[#718096] text-lg leading-relaxed">
-              Soy un ingeniero de software frontend con más de 5 años de experiencia creando
-              aplicaciones web modernas y escalables. Mi enfoque está en desarrollar interfaces
-              intuitivas que combinen funcionalidad con diseño excepcional.
-            </p>
-
-            <p className="text-[#718096] text-lg leading-relaxed">
-              Me especializo en React, TypeScript y arquitecturas frontend robustas.
-              Creo firmemente en la importancia de escribir código mantenible, accesible
-              y optimizado para ofrecer las mejores experiencias de usuario.
-            </p>
-
-            <p className="text-[#718096] text-lg leading-relaxed">
-              Cuando no estoy programando, me encontrarás explorando nuevas herramientas de diseño,
-              contribuyendo a proyectos open source o compartiendo conocimientos con la comunidad.
-            </p>
-          </motion.div>
-
-          {/* Highlights section */}
-          <motion.div
-            initial={{opacity: 0, x: 20}}
-            whileInView={{opacity: 1, x: 0}}
-            viewport={{once: true}}
-            transition={{duration: 0.6, delay: 0.4}}
-            className="space-y-6"
-          >
-            {highlights.map((item, index) => (<motion.div
-                key={item.title}
-                initial={{opacity: 0, y: 20}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{duration: 0.5, delay: 0.5 + index * 0.1}}
-                className="neomorphic p-6 hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="neomorphic-flat p-3 rounded-xl">
-                    <item.icon className="w-6 h-6 text-[#667EEA]" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-[#2D3748] mb-2">{item.title}</h4>
-                    <p className="text-[#718096]">{item.description}</p>
-                  </div>
-                </div>
-              </motion.div>))}
-          </motion.div>
-        </div>
+            <div className="flex items-start gap-4">
+              <div className="neomorphic-flat p-3 rounded-xl">
+                <item.icon className="w-6 h-6 text-[#667EEA]" />
+              </div>
+              <div className="flex-1">
+                <h4 className="text-[#2D3748] mb-2">{item.title}</h4>
+                <p className="text-[#718096]">{item.description}</p>
+              </div>
+            </div>
+          </motion.div>))}
+        </motion.div>
       </div>
-    </section>);
+    </div>
+  </section>);
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
-import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu@1.2.5";
-import { cva } from "class-variance-authority@0.7.1";
-import { ChevronDownIcon } from "lucide-react@0.487.0";
+import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
+import { cva } from "class-variance-authority";
+import { ChevronDownIcon } from "lucide-react";
 
 import { cn } from "./utils";
 
@@ -24,7 +24,7 @@ function NavigationMenu({
       {...props}
     >
       {children}
-      {viewport && <NavigationMenuViewport/>}
+      {viewport && <NavigationMenuViewport />}
     </NavigationMenuPrimitive.Root>
   );
 }
@@ -150,7 +150,7 @@ function NavigationMenuIndicator({
       )}
       {...props}
     >
-      <div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md"/>
+      <div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
     </NavigationMenuPrimitive.Indicator>
   );
 }

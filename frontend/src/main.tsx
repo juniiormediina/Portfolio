@@ -10,4 +10,4 @@ import "./index.css";
 
 // Create a root container for the React application and render the App component
 createRoot(document.getElementById("root")!) // The `!` asserts that the element with ID `root` exists
-  .render(<App/>); // Render the App component into the root container
+  .render(<App />); // Render the App component into the root container
