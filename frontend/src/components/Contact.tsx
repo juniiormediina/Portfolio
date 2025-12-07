@@ -110,10 +110,10 @@ export function Contact() {
             >
               {copiedEmail ? (<>
                 <Check className="w-5 h-5 text-green-500" />
-                <span className="text-green-500">¡Copiado!</span>
+                <span className="text-green-500">{t('contact.copy_it')}</span>
               </>) : (<>
                 <Copy className="w-5 h-5 text-[#718096]" />
-                <span className="text-[#718096]">Copiar email</span>
+                <span className="text-[#718096]">{t('contact.copy_email')}</span>
               </>)}
             </button>
           </div>
@@ -128,7 +128,7 @@ export function Contact() {
         transition={{duration: 0.6, delay: 0.4}}
         className="mb-12"
       >
-        <h3 className="text-[#2D3748] text-center mb-8">O encuéntrame en</h3>
+        <h3 className="text-[#2D3748] text-center mb-8">{t('contact.find.me')}</h3>
 
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {socialLinks.map((social, index) => (<motion.a
@@ -152,7 +152,7 @@ export function Contact() {
                 <p className="text-[#718096] text-sm">{social.description}</p>
               </div>
               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="text-sm gradient-text">Visitar perfil →</span>
+                <span className="text-sm gradient-text">{t('contact.visit')}</span>
               </div>
             </div>
           </motion.a>))}
@@ -168,8 +168,8 @@ export function Contact() {
         className="text-center neomorphic-flat p-8 max-w-2xl mx-auto"
       >
         <p className="text-[#718096] text-lg">
-          💼 Actualmente <span className="text-[#667EEA]">disponible</span> para proyectos freelance y oportunidades
-          full-time
+          💼 {t('contact.availability')} <span
+          className="text-[#667EEA]">{t('contact.availability.1')}</span> {t('contact.availability.2')}
         </p>
       </motion.div>
     </div>

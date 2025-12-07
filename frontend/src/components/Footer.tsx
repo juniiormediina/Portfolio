@@ -18,7 +18,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Copyright section */}
           <div className="flex items-center gap-2 text-[#718096]">
-            <span>© 2025 Todos los derechos reservados</span>
+            <span>© 2025 {t('footer.rights')}</span>
           </div>
 
           {/* Message section */}

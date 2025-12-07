@@ -23,7 +23,7 @@ export function About() {
     title: t('about.approach_1'), // Title for the approach highlight
     description: t('about.approach.desc_1'), // Description for the approach highlight
   }, {
-    icon: Heart, // Icon representing journey
+    icon: Heart, // Icon representing a journey
     title: t('about.journey_1'), // Title for the journey highlight
     description: t('about.journey.desc_1'), // Description for the journey highlight
   },];

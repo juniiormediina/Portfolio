@@ -79,14 +79,22 @@ const translations = {
 
     // Contact
     'contact.title': '¡Conectemos!',
-    'contact.subtitle': '¿Tienes un proyecto en mente o simplemente quieres conversar?\n' + '            Estoy siempre abierto a nuevas oportunidades y colaboraciones',
+    'contact.subtitle': '¿Tienes un proyecto en mente o simplemente quieres conversar? Estoy siempre abierto a' + ' nuevas oportunidades y colaboraciones',
     'contact.email': 'La forma más directa de contactarme',
     'contact.send_email': 'Enviar email',
+    'contact.copy_it': '¡Copiado!',
+    'contact.copy_email': 'Copiar email',
+    'contact.find.me': 'O encuéntrame en',
     'contact.linkedin': 'Conecta conmigo profesionalmente',
     'contact.github': 'Revisa mi código',
     'contact.instagram': 'Sígueme para ver mi trabajo',
+    'contact.visit': 'Visitar perfil →',
+    'contact.availability': 'Actualmente',
+    'contact.availability.1': 'disponible',
+    'contact.availability.2': 'para proyectos freelance y oportunidades full-time',
 
     // Footer
+    'footer.rights': 'Todos los derechos reservados',
     'footer.text': 'Hecho con',
     'footer.by': 'por',
     'footer.text.comp': 'y mucho café',
@@ -101,28 +109,28 @@ const translations = {
     // Hero
     "hero.greeting": "Hi, I'm",
     "hero.role": "Frontend Software Engineer",
-    "hero.description": "I bring ideas to life through exceptional digital experiences. Specialized in building modern, accessible and user-centered interfaces.",
-    "hero.cta": "See my work",
+    "hero.description": "I turn ideas into exceptional digital experiences. Specialized in building modern, accessible, and user-centered interfaces.",
+    "hero.cta": "View my work",
     "hero.contact": "Contact me",
 
     // About
     "about.title": "About Me",
-    "about.intro": "I am a frontend software engineer passionate about creating exceptional web experiences that combine elegant design with clean code and optimal performance.",
-    "about.intro_1": "I am a frontend software engineer with over 5 years of experience building\n              modern and scalable web applications. My focus is on developing intuitive interfaces\n              that blend functionality with outstanding design.",
-    "about.intro_2": "I specialize in React, TypeScript and robust frontend architectures.\n              I strongly believe in writing maintainable, accessible,\n              and optimized code to deliver the best user experiences.",
-    "about.intro_3": "When I'm not coding, you'll find me exploring new design tools,\n              contributing to open-source projects, or sharing knowledge with the community.",
+    "about.intro": "I am a frontend software engineer passionate about crafting outstanding web experiences that blend elegant design with clean code and optimal performance.",
+    "about.intro_1": "I am a frontend software engineer with over 5 years of experience building modern and scalable web applications. My focus is on developing intuitive interfaces that combine functionality with exceptional design.",
+    "about.intro_2": "I specialize in React, TypeScript, and robust frontend architectures. I strongly believe in writing maintainable, accessible, and optimized code to deliver the best user experiences.",
+    "about.intro_3": "When I'm not coding, you’ll find me exploring new design tools, contributing to open-source projects, or sharing knowledge with the community.",
     "about.passion": "What drives me?",
     "about.passion_1": "Passionate",
-    "about.passion.desc": "I love transforming complex ideas into intuitive and accessible interfaces. I enjoy staying up-to-date with the latest frontend technologies and industry best practices.",
-    "about.passion.desc_1": "About crafting clean and scalable code to create memorable experiences",
+    "about.passion.desc": "I love transforming complex ideas into intuitive and accessible interfaces. I enjoy staying up to date with the latest frontend technologies and industry best practices.",
+    "about.passion.desc_1": "About creating clean and scalable code to deliver memorable experiences",
     "about.approach": "My Approach",
     "about.approach_1": "Innovative",
     "about.approach.desc": "I believe in user-centered development, maintainable code, and effective collaboration. Every project is an opportunity to learn something new and push boundaries.",
     "about.approach.desc_1": "Always exploring new technologies and trends in the frontend development world.",
     "about.journey": "My Journey",
     "about.journey_1": "Attention to Detail",
-    "about.journey.desc": "With more than 5 years of experience in frontend development, I’ve worked on a wide variety of projects—from startups to established companies—always focused on delivering real value to users.",
-    "about.journey.desc_1": "Obsessed with the small details that make a difference",
+    "about.journey.desc": "With over 5 years of experience in frontend development, I’ve worked on a wide range of projects—from startups to established companies—always focused on delivering real value to users.",
+    "about.journey.desc_1": "Obsessed with the small details that make a big difference",
 
     // Projects
     "projects.title": "Featured Projects",
@@ -145,28 +153,37 @@ const translations = {
     "skills.teamwork": "Teamwork",
     "skills.teamwork.desc": "Effective collaboration",
     "skills.leadership": "Leadership",
-    "skills.leadership.desc": "Guiding teams to success",
+    "skills.leadership.desc": "Leading teams to success",
     "skills.communication": "Communication",
     "skills.communication.desc": "Clear and assertive",
     "skills.learning": "Learning",
     "skills.learning.desc": "Always evolving",
     "skills.stats.years": "Years of experience",
-    "skills.stats.tech": "Technologies mastered",
+    "skills.stats.tech": "Mastered technologies",
     "skills.stats.projects": "Completed projects",
 
     // Contact
-    "contact.title": "Let's Connect!",
-    "contact.subtitle": "Do you have a project in mind or just want to chat?\n            I'm always open to new opportunities and collaborations.",
+    "contact.title": "Let’s Connect!",
+    "contact.subtitle": "Do you have a project in mind or just want to chat? I'm always open to new opportunities and collaborations.",
     "contact.email": "The most direct way to reach me",
     "contact.send_email": "Send email",
+    "contact.copy_it": "Copied!",
+    "contact.copy_email": "Copy email",
+    "contact.find.me": "Or find me on",
     "contact.linkedin": "Connect with me professionally",
-    "contact.github": "Check out my code",
-    "contact.instagram": "Follow me to see my work",
+    "contact.github": "Check my code",
+    "contact.instagram": "Follow me to see more of my work",
+    "contact.visit": "Visit profile →",
+
+    "contact.availability": "Currently",
+    "contact.availability.1": "available",
+    "contact.availability.2": "for freelance projects and full-time opportunities",
 
     // Footer
-    "footer.text": "Made with",
+    "footer.rights": "All rights reserved",
+    "footer.text": "Built with",
     "footer.by": "by",
-    "footer.text.comp": "and lots of coffee"
+    "footer.text.comp": "and plenty of coffee"
   },
 };
 

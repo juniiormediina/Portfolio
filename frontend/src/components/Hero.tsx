@@ -94,7 +94,7 @@ export function Hero({onNavigateToProjects}: HeroProps) {
               transition={{duration: 3, repeat: Infinity}}
               className="absolute top-0 right-0 w-16 h-16 neomorphic rounded-2xl flex items-center justify-center"
             >
-              <span className="text-2xl">🎨</span>
+              <span className="text-2xl">📱</span>
             </motion.div>
 
             <motion.div
